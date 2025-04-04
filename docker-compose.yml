@@ -6,12 +6,12 @@ services:
     image: mysql:5.7
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: devops
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: tws_db
       MYSQL_USER: admin
       MYSQL_PASSWORD: admin
     volumes:
-      - ./mysql-data:/var/lib/mysql
+      - ./mysql_data:/var/lib/mysql
       - ./message.sql:/docker-entrypoint-initdb.d/message.sql  
     networks:
       - twotier
@@ -29,10 +29,10 @@ services:
       - "5000:5000"
     environment:
       MYSQL_HOST: mysql
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
-      MYSQL_DB: devops
-    depends_on:
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DB: tws_db
+    depends_on
       - mysql
     networks:
       - twotier
@@ -46,3 +46,5 @@ services:
 
 networks:
   twotier:
+volumes:
+  mysql_data:
