@@ -20,8 +20,8 @@ pipeline{
                     )])
                     {
                         sh "docker login -u ${env.dockeruser} -p ${env.dockerpass}"
-                        sh "docker image tag two-tier-flaskapp ${env.dockeruser}/two-tier-flaskapp:${BUILD NUMBER} "
-                        sh "docker push ${env.dockeruser}/two-tier-flaskapp:${BUILD NUMBER} "
+                        sh "docker image tag two-tier-flaskapp ${env.dockeruser}/two-tier-flaskapp:${BUILD_UMBER} "
+                        sh "docker push ${env.dockeruser}/two-tier-flaskapp:${BUILD_NUMBER} "
                     }
             }
         }
