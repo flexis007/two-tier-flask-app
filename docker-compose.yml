@@ -23,7 +23,7 @@ services:
       start_period: 60s
 
   flask-app:
-    image: flexis008/two-tier-flaskapp:${BUILD NUMBER}
+    image: flexis008/two-tier-flaskapp:${BUILD_NUMBER}
     container_name: flask-app
     ports:
       - "5000:5000"
