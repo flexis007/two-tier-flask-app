@@ -40,7 +40,8 @@ pipeline{
     post{
         success{
             script{
-                emailext from: 'imti.ansari007@gmail.com',
+                emailext attachLog: true,
+                from: 'imti.ansari007@gmail.com',
                 to: 'imti.ansari007@gmail.com',
                 body: 'Build success for Demo CICD App',
                 subject: 'Build success for Demo CICD App'
